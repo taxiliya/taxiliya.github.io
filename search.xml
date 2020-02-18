@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>如何用hexo搭建博客网站</title>
+    <url>/2020/02/18/%E5%A6%82%E4%BD%95%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<h1 id="如何用hexo搭建博客网站"><a href="#如何用hexo搭建博客网站" class="headerlink" title="如何用hexo搭建博客网站"></a>如何用hexo搭建博客网站</h1><ol>
+<li><p>win+r打开“运行”对话框，输入cmd打开命令行程序，部分步骤需用命令提示符操作</p>
+</li>
+<li><p>访问nodejs.org,下载node.js最新的的lts（Long Term Support 长期支持）版本，安装node.js会附带安装好npm。在命令行程序输入 node -v 查看node版本，输入npm -v查看npm版本,以此查看node.js与npm是否安装好，v代表version</p>
+</li>
+<li><p>利用npm 安装 cnpm（淘宝镜像）在命令行程序中输入： npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> 。命令行程序中输入 cnpm -v 查看cnpm是否安装好</p>
+</li>
+<li><p>用cnpm安装hexo，在命令行输入： cnpm install -g hexo-cli。输入hexo -v 查看hexo是否安装好</p>
+</li>
+<li><p>下载git，配置环境变量，配置方法：</p>
+<hr>
+<ul>
+<li>找到git安装路径中bin的位置，如：D:\Program Files\Git\bin</li>
+<li>找到git安装路径中git-core的位置，如：D:\Program Files\Git\libexec\git-core;</li>
+<li>右键“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”-&gt;在下方的“系统变量”中找到“path”-&gt;选中“path”并选择“编辑”-&gt;将3.1种找到的bin和git-core路径复制到其中-&gt;保存并退出<br>注：</li>
+<li>”D:\Program Files\Git\”是安装路径，可能与你的安装路径不一样，要按照你自己的路径替换”D:\Program Files\Git\”</li>
+<li>“path”中，每个路径之间要以英文输入状态下的分号——“;”作为间隔<br>文章链接：[git 不是内部或外部命令，也不是可运行的程序​][<a href="https://blog.csdn.net/Andone_hsx/article/details/87937329]" target="_blank" rel="noopener">https://blog.csdn.net/Andone_hsx/article/details/87937329]</a></li>
+</ul>
+<hr>
+</li>
+<li><p>选一个位置，建一个blog文件夹，用以储存博客的相关内容，出错直接删掉此文件夹就行，创建文件夹的命令：mkdir blog</p>
+</li>
+<li><p>进入blog文件夹。在命令行输入 hexo init，记得在blog文件夹下输，此命令是为了初始化一个博客</p>
+</li>
+<li><p>输入 hexo n “标题” ，创建一篇新的博客</p>
+</li>
+<li><p>通过给出的路径找到新创建的博文，用文本编辑软件修改文章内容</p>
+</li>
+<li><p>输入命令hexo c（hexo clean）清楚文件缓存，hexo g生成静态文件</p>
+</li>
+<li><p>输入 hexo s（hexo server）启动</p>
+</li>
+<li><p>进入 http：//localhost：4000查看博客</p>
+</li>
+<li><p>查看完之后在命令行输入 ctrl+c终止程序</p>
+</li>
+</ol>
+<h1 id="如何将本地hexo博客部署到Github上"><a href="#如何将本地hexo博客部署到Github上" class="headerlink" title="如何将本地hexo博客部署到Github上"></a>如何将本地hexo博客部署到Github上</h1><hr>
+<ol>
+<li><p>新建一个仓库，repository name填：你的GitHub昵称.github.io，description随意</p>
+</li>
+<li><p>通过命令行进入blog文件夹，输入命令：cnpm install –save hexo-deployer-git 安装博客部署插件</p>
+</li>
+<li><p>安装完成后，编辑_config.yml文件，用记事本打开，找到deploy：添加下列内容：</p>
+<hr>
+<p>type: git<br> repo: <a href="https://github.com/你的GitHub昵称/你的GitHub昵称.github.io" target="_blank" rel="noopener">https://github.com/你的GitHub昵称/你的GitHub昵称.github.io</a><br> branch:  master</p>
+<hr>
+<p>添加完后保存退出（冒号后有空格，必须加上）</p>
+</li>
+<li><p>输入命令 hexo d（），之后windows系统操作的话应该会弹出对话框需要你填Github的用户名与密码</p>
+</li>
+<li><p>以后输入hexo deploy（hexo deploy）就可以上传本地已经写好的博客了，博客文件会上传到GIthub的仓库中，之后就可以直接访问 https://你的GitHub昵称.github.io 这个网址就可以看到博客内容了</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>博客</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/01/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
